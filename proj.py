@@ -12,7 +12,9 @@ option = webdriver.ChromeOptions()
 driver = webdriver.Chrome(service=service, options= option)
 
 url = "https://cv.lv/lv"
+
 driver.get(url)
+
 WebDriverWait(driver, 5).until(ES.presence_of_element_located((By.CLASS_NAME, "jsx-4189752321.close-modal-button")))
 
 
@@ -20,24 +22,55 @@ poga = driver.find_element(By.CLASS_NAME, "jsx-4189752321.close-modal-button")
 poga.click()
 poga1 = driver.find_element(By.CLASS_NAME, "css-19bqh2r")
 poga1.click()
-time.sleep(3)
+time.sleep(1)
 poga = driver.find_element(By.ID, "react-select-2-option-1-0")
 poga.click()
 time.sleep(1)
+
 uzleju = driver.find_elements(By.CLASS_NAME, "css-19bqh2r")
-print(uzleju)
 uzleju[1].click()
 time.sleep(1)
+
 IT = driver.find_element(By.ID, "react-select-3-option-1-0")
 IT.click()
 time.sleep(1)
+
 kast=driver.find_element(By.CLASS_NAME, "jsx-1690969694.input-checkbox")
 kast.click()
 time.sleep(1)
+
 vairak = driver.find_element(By.CLASS_NAME, "jsx-2273220519.btn-plain.btn-plain--standard")
 vairak.click()
-meklēt=driver.find_element(By.XPATH, '//button[contains(span, "Rādīt")]')
-meklēt.click()
+time.sleep(1)
+
+zleju = driver.find_elements(By.CLASS_NAME, "css-19bqh2r")
+zleju[4].click()
+time.sleep(3)
+pus= driver.find_element(By.ID, "react-select-10-option-2")
+pus.click()
+time.sleep(3)
+zleju = driver.find_elements(By.CLASS_NAME, "css-19bqh2r")
+zleju[4].click()
+pecmac = driver.find_element(By.ID, "react-select-10-option-4")
+pecmac.click()
+zleju = driver.find_elements(By.CLASS_NAME, "css-19bqh2r")
+zleju[4].click()
+prakse = driver.find_element(By.ID, "react-select-10-option-5")
+prakse.click()
+
+
+
+driver.maximize_window()
+time.sleep(2)
+
+m=driver.find_element(By.CLASS_NAME, "jsx-2818744897.search-form-footer__item")
+m.click()
+
+cookie=driver.find_element(By.CLASS_NAME,"cookie-consent-button")
+cookie.click()
+
+
+
 
 input()
 time.sleep(4)
