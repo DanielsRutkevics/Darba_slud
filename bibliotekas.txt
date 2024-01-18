@@ -1,2 +1,7 @@
-requests
-selenium
+Izmantotās bibliotēkas:
+
+    requests
+
+    selenium
+    
+    bs4
