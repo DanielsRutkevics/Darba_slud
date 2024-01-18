@@ -20,12 +20,20 @@ WebDriverWait(driver, 5).until(ES.presence_of_element_located((By.CLASS_NAME, "j
 
 poga = driver.find_element(By.CLASS_NAME, "jsx-4189752321.close-modal-button")
 poga.click()
+
+
 poga1 = driver.find_element(By.CLASS_NAME, "css-19bqh2r")
 poga1.click()
 time.sleep(1)
 poga = driver.find_element(By.ID, "react-select-2-option-1-0")
 poga.click()
 time.sleep(1)
+poga1 = driver.find_element(By.CLASS_NAME, "css-19bqh2r")
+poga1.click()
+poga2 = driver.find_element(By.ID, "react-select-2-option-0-0")
+poga2.click()
+
+
 
 uzleju = driver.find_elements(By.CLASS_NAME, "css-19bqh2r")
 uzleju[1].click()
@@ -46,16 +54,16 @@ time.sleep(1)
 zleju = driver.find_elements(By.CLASS_NAME, "css-19bqh2r")
 zleju[4].click()
 time.sleep(3)
-pus= driver.find_element(By.ID, "react-select-10-option-2")
+pus= driver.find_element(By.ID, "react-select-5-option-2")
 pus.click()
 time.sleep(3)
 zleju = driver.find_elements(By.CLASS_NAME, "css-19bqh2r")
 zleju[4].click()
-pecmac = driver.find_element(By.ID, "react-select-10-option-4")
+pecmac = driver.find_element(By.ID, "react-select-5-option-4")
 pecmac.click()
 zleju = driver.find_elements(By.CLASS_NAME, "css-19bqh2r")
 zleju[4].click()
-prakse = driver.find_element(By.ID, "react-select-10-option-5")
+prakse = driver.find_element(By.ID, "react-select-5-option-5")
 prakse.click()
 
 
