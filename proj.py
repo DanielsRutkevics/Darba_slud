@@ -65,11 +65,11 @@ time.sleep(1)
 # atvērt izvēli trešo
 zleju = driver.find_elements(By.CLASS_NAME, "css-19bqh2r")
 zleju[4].click()
-time.sleep(3)
+time.sleep(1)
 
 pus= driver.find_element(By.ID, "react-select-5-option-2")
 pus.click()
-time.sleep(3)
+time.sleep(1)
 
 zleju = driver.find_elements(By.CLASS_NAME, "css-19bqh2r")
 zleju[4].click()
@@ -86,7 +86,7 @@ prakse.click()
 
 # palielināt pārlūkprogrammas logu
 driver.maximize_window()
-time.sleep(2)
+time.sleep(1)
 
 # uzspiest rādīt rezultātus
 m=driver.find_element(By.CLASS_NAME, "jsx-2818744897.search-form-footer__item")
@@ -96,7 +96,7 @@ m.click()
 cookie=driver.find_element(By.CLASS_NAME,"cookie-consent-button")
 cookie.click()
 
-time.sleep(5)
+time.sleep(2)
 
 # atjaunināt pašreizējās mājaslapas saturu
 driver.refresh()
@@ -111,13 +111,23 @@ darba_nosaukumi = zup.find_all('span',class_="jsx-3024910437 vacancy-item__title
 with open("profesijas_sar.txt", "r") as file:
     filesat = file.read()
 
+result = 0
 # ja failā nav atrastās profesijas tā tiek pievienota teksta failam
 with open("profesijas_sar.txt", "a") as file:
+    file.write("Kopš pēdējās reizes jauni darbi:"+"\n\n"+"\n")
     for darbs in darba_nosaukumi:
-        if str(darbs) not in filesat:
-            file.write(str(darbs.text) + "\n")
+        if darbs.text not in filesat:
+            file.write(darbs.text + "\n")
+            result+=1
+    if result == 0:
+        file.write("===================================="+"\n")
+
+# ja jaunu sludinājumu nav pārlūkprogramma beidz savu darbību
+if result == 0:
+    driver.close()
 
 
 
-# nodrošina lai pārlūkprogramma neaizveras un var turpināt skatīties sludinājumus           
-input()
+# nodrošina lai pārlūkprogramma neaizveras un var turpināt skatīties sludinājumus      
+else:     
+    input()
