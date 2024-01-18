@@ -1,7 +1,5 @@
 Izmantotās bibliotēkas:
 
-    requests
-
     selenium
     
     bs4
